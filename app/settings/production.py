@@ -1,6 +1,7 @@
 """Production settings."""
 
 from .base import *  # noqa
+from .base import BASE_DIR  # noqa
 import os
 
 
@@ -68,4 +69,4 @@ DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
 # Static files
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 STATIC_URL = "static/"
-STATIC_ROOT = "/var/www/ayo-onipe/static"
+STATIC_ROOT = BASE_DIR / "staticfiles"

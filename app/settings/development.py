@@ -34,3 +34,6 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # Debug
 DEBUG = True
+
+# Static
+STATIC_ROOT = BASE_DIR / "staticfiles"
