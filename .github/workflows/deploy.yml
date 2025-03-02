@@ -1,0 +1,32 @@
+name: Deploy Django App
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set Up SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SECRET_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Executing Remote SSH Commands
+        run: |
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+            cd /var/www/ayo-onipe
+            git fetch --all
+            git reset --hard origin/main
+            source venv/bin/activate
+            pip install -r requirements.txt
+            python manage.py migrate
+            echo yes | python manage.py collectstatic
+            sudo systemctl restart gunicorn nginx
+          EOF
