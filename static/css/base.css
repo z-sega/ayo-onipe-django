@@ -1,0 +1,14 @@
+@import url("normalize.css");
+@import url("typography.css");
+@import url("layout.css");
+@import url("theme.css");
+
+* {
+    font-family: "TX-02", sans-serif;
+}
+
+.InBox {
+    padding: 0.2em;
+    background-color: azure;
+    border: 1px solid #000000;
+}
