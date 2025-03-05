@@ -1,0 +1,45 @@
+{% extends "_base.html" %}
+
+{% block title %}Ayo Onipe Info.{% endblock title %}
+
+{% block app_content %}
+<div class="container text-center">
+  <table class="table">
+    <thead>
+      <th colspan="2">Personal Info.</th>
+    </thead>
+    <tbody>
+      {% for key, value in personal_info.items %}
+        <tr>
+          <td>{{ key|title }}</td>
+          {% if value.items %}
+            <td><a href="{{ value.link }}">{{ value.repr}}</a></td>
+          {% else %}
+            <td>{{ value }}</td>            
+          {% endif %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <table class="table">
+    <thead>
+      <th colspan="2">Contact Info.</th>
+    </thead>
+    <tbody>
+      {% for key, value in contact_info.items %}
+        <tr>
+          <td>{{ key|title }}</td>
+          {% if value.items %}
+            <td><a href="{{ value.link }}">{{ value.repr }}</a></td>
+          {% else %}
+            <td>{{ value }}</td>            
+          {% endif %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+{% endblock app_content %}
+

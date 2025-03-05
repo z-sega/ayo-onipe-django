@@ -7,8 +7,47 @@
     font-family: "TX-02", sans-serif;
 }
 
-.InBox {
-    padding: 0.2em;
-    background-color: azure;
-    border: 1px solid #000000;
+.breadcrumbs {
+    margin: 0.2em;
+    border-bottom: 1px solid #000000;
+}
+
+.table {
+    background-color: red;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    text-align: left;
+    border: 0.1rem solid #bfbfbf;
+}
+
+.table.table-striped tbody tr:nth-of-type(odd) {
+    background: #eee;
+}
+
+.table tbody tr.active,
+.table.table-striped tbody tr.active {
+    background: #e6e6e6;
+}
+
+.table.table-hover tbody tr:hover {
+    background: #e6e6e6;
+}
+
+.table.table-scroll {
+    display: block;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    white-space: nowrap;
+}
+
+.table td {
+    padding: 0.3rem 0.6rem 0;
+    border-bottom: 0.1rem solid #bfbfbf;
+}
+
+.table th {
+    font-weight: 600;
+    padding: 0.3rem 0.6rem 0;
+    border-bottom: 0.1rem solid #000;
 }

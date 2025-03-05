@@ -1,0 +1,27 @@
+{% extends "_base.html" %}
+
+{% block title %}Site Map{% endblock title %}
+
+{% block app_content %}
+<div class="container">
+  <section>
+    <h4>Site Map</h4>
+    <ul class="tree">
+      {% for node in url_tree %}
+      {% if node.sub_paths %}
+      <li class="folder">{{ node.name }}
+        <ul class="tree">
+          {% for sub_node in node.sub_paths %}
+            <li><a href="{{ sub_node.path }}">{{ sub_node.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% else %}
+      <li><a href="{{ node.path }}">{{ node.name }}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
+</div>
+{% endblock app_content %}
+
