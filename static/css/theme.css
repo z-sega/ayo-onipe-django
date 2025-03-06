@@ -1,18 +1,60 @@
 /* Light Mode */
 :root {
-    --background: white;
-    --text-color: black;
-    --link-color: blue;
+    /* Backgrounds */
+    --background: #f9f9f9;
+    --surface: #ffffff;
+    --footer-bg: #f1f1f1;
+
+    /* Text */
+    --text-color: #333;
+    --heading-color: #222;
+    --muted-text: #666;
+
+    /* Links */
+    --link-color: #0077cc;
+    --link-hover: #0055aa;
+
+    /* Accent Colors */
+    --primary: #ff6f61; /* Coral Red */
+    --secondary: #f4a261; /* Warm Orange */
+    --tertiary: #2a9d8f; /* Teal Green */
+
+    /* Borders & Shadows */
+    --border-color: #ddd;
+    --shadow-light: rgba(0, 0, 0, 0.1);
 }
 
 /* Dark Mode */
 .dark-mode {
-    --background: #222;
-    --text-color: white;
-    --link-color: lightblue;
+    /* Backgrounds */
+    --background: #121212;
+    --surface: #1e1e1e;
+    --footer-bg: #181818;
+
+    /* Text */
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --muted-text: #bbbbbb;
+
+    /* Links */
+    --link-color: #4da6ff;
+    --link-hover: #3399ff;
+
+    /* Accent Colors */
+    --primary: #ff7878; /* Soft Red */
+    --secondary: #e9a03f; /* Warm Amber */
+    --tertiary: #3cb371; /* Medium Sea Green */
+
+    /* Borders & Shadows */
+    --border-color: #333;
+    --shadow-light: rgba(255, 255, 255, 0.1);
 }
 
-body {
-    background: var(--background);
-    color: var(--text-color);
+/* Cards & Containers */
+.card {
+    background: var(--surface);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    border: 1px solid var(--border-color);
 }
