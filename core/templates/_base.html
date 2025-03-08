@@ -1,17 +1,4 @@
 {% extends "base.html" %}
-{% load view_breadcrumbs %}
-
-{% block header %}
-  <nav>
-    <div class="breadcrumbs">
-      {% block breadcrumbs %}
-        <main>
-          {% render_breadcrumbs 'view_breadcrumbs/bootstrap5.html' %}
-        </main>
-      {% endblock %}
-    </div>
-  </nav>
-{% endblock header %}
 
 {% block content %}
   {% block app_content %}

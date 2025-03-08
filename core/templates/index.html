@@ -3,7 +3,28 @@
 {% block title %}Home{% endblock title %}
 
 {% block app_content %}
-<div class="container text-center">
-  <h1>Welcome to Ayo Onipe!</h1>
-</div>
+  <article>
+    <section>
+      <div class="container">
+        <h1>Ayo Onipe</h1>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h4>
+          <a href="{% url 'me' %}">{{ "About Me -->" }}</a>
+        </h4>
+      </div>
+      
+    </section>
+
+    <section>
+      <div class="container">
+        <h4>
+          <a href="{% url 'blog:post_list' %}">{{ "Posts -->" }}</a>
+        </h4>
+      </div>
+    </section>
+  </article>
 {% endblock app_content %}

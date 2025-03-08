@@ -73,8 +73,7 @@ h4 {
 body {
     display: block;
     float: none;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0em auto 0em;
     max-width: 60rem;
     padding: 1em;
     border: 0.1rem solid #bfbfbf;
@@ -268,19 +267,23 @@ div.sourceCode {
 
 @keyframes blink {
     0% {
-        text-decoration: underline;
+        text-decoration: none;
+        background: var(--link-hover);
+        color: white;
     }
     50% {
-        text-decoration: none;
+        text-decoration: underline;
+        background-color: var(--background);
+        color: var(--link-color);
     }
     100% {
-        text-decoration: underline;
+        text-decoration: none;
+        background: var(--link-hover);
+        color: white;
     }
 }
 
 /* Apply blinking on hover */
 .post a:hover {
-    background: black;
     animation: blink 0.6s step-start infinite;
-    color: white;
 }

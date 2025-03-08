@@ -1,20 +1,21 @@
-{% extends "_base.html" %}
-
-{% block app_content %}
-  <article>
-    <section>
-      <h3>Index</h3>
-
-      <ul>
-        {% for post in posts %}
-          <li>
+{% extends "_base.html" %} {% block app_content %}
+<div class="container text-center">
+  <table class="table">
+    <caption>Index</caption>
+    <thead>
+      <th>Date</th>
+      <th>Title</th>
+    </thead>
+    <tbody>
+      {% for post in posts %}
+        <tr>
+          <td><small>{{ post.created|date:"F j, Y" }}</small></td>
+          <td>
             <a href="{% url 'blog:post_detail' post.pk %}">{{ post.title }}</a>
-            <small>({{ post.created|date:"F j, Y" }})</small>
-          </li>
-          {% empty %}
-          <p>No blog posts available.</p>
-        {% endfor %}
-      </ul>
-    </section>
-  </article>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 {% endblock app_content %}
