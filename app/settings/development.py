@@ -1,7 +1,7 @@
 """Development settings."""
 
 from .base import *  # noqa
-from .base import BASE_DIR
+from .base import BASE_DIR, INSTALLED_APPS
 import os  # noqa
 
 print("Using development settings...")
@@ -37,3 +37,4 @@ DEBUG = True
 
 # Static
 STATIC_ROOT = BASE_DIR / "staticfiles"
+INSTALLED_APPS += ["whitenoise.runserver_nostatic"]
