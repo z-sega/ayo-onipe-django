@@ -68,5 +68,5 @@ DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
 
 # Static files
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-STATIC_URL = "/static/"
+STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
