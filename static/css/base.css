@@ -7,6 +7,69 @@
     font-family: "TX-02", sans-serif;
 }
 
+h1 {
+    font-size: var(--font-h1);
+    line-height: var(--line-height-heading);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-primary);
+}
+
+h2 {
+    font-size: var(--font-h2);
+    line-height: var(--line-height-heading);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-primary);
+}
+
+h3 {
+    font-size: var(--font-h3);
+    line-height: var(--line-height-heading);
+    font-weight: var(--font-weight-medium);
+    font-family: var(--font-primary);
+}
+
+h4 {
+    font-size: var(--font-h4);
+    line-height: var(--line-height-heading);
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-primary);
+}
+
+.body-lg {
+    font-size: var(--font-body-lg);
+    line-height: var(--line-height-body);
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-primary);
+}
+
+.body-md {
+    font-size: var(--font-body-md);
+    line-height: var(--line-height-body);
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-primary);
+}
+
+.body-sm {
+    font-size: var(--font-body-sm);
+    line-height: var(--line-height-body);
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-primary);
+}
+
+.body-xs {
+    font-size: var(--font-body-xs);
+    line-height: var(--line-height-body);
+    font-weight: var(--font-weight-light);
+    font-family: var(--font-primary);
+}
+
+.display {
+    font-size: var(--font-display);
+    line-height: var(--line-height-display);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-primary);
+}
+
 body {
     display: block;
     float: none;
@@ -18,6 +81,10 @@ body {
 
     background: var(--background);
     color: var(--text-color);
+}
+
+small {
+    color: var(--tertiary);
 }
 
 /* Sticky Footer */
@@ -52,6 +119,7 @@ button:hover {
 .breadcrumbs {
     margin: 0.2em;
     border-bottom: 1px solid #000000;
+    font-size: var(--font-body-xs);
 }
 
 .measure-60 {
@@ -67,7 +135,6 @@ button:hover {
 
 /* TABLE */
 .table {
-    background-color: red;
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
@@ -104,4 +171,116 @@ button:hover {
     font-weight: 600;
     padding: 0.3rem 0.6rem 0;
     border-bottom: 0.1rem solid #000;
+}
+
+/* Article (Blog Post) Styling */
+.post article {
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+}
+
+div.sourceCode {
+    background-color: var(--code-bg);
+    border-left: 4px solid var(--tertiary); /* Subtle left border */
+    margin: 10px 10px;
+    padding: 0px 8px;
+    font-size: 0.8em; /* Small font size */
+    font-family: var(--font-code);
+}
+
+/* Post Header */
+.post:first-of-type > section:first-of-type > h1:first-of-type {
+    font-size: var(--font-h2);
+    font-weight: var(--font-weight-bold);
+    text-transform: capitalize;
+}
+
+.post h1 {
+    font-size: var(--font-h4);
+    font-weight: var(--font-weight-medium);
+    text-transform: capitalize;
+}
+
+.post h2 {
+    font-size: var(--font-h5);
+    font-weight: var(--font-weight-medium);
+    text-transform: capitalize;
+}
+
+.post h3 {
+    font-size: var(--font-h6);
+    font-weight: var(--font-weight-medium);
+    text-transform: capitalize;
+}
+
+.post small {
+    font-size: var(--font-body-xs);
+}
+
+/* Article Content */
+.post p {
+    font-size: var(--font-body-xs);
+    line-height: var(--line-height-body);
+}
+
+/* Post Lists */
+.post ul,
+.post ol {
+    padding-left: 20px;
+}
+
+.post ul {
+    list-style-type: square;
+}
+
+.post ol {
+    list-style-type: decimal;
+}
+
+/* Post Tables */
+.post table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.post th,
+.post td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.post th {
+    background: #eee;
+    text-transform: uppercase;
+}
+
+/* Sidebar-Like Section */
+.post blockquote {
+    font-style: italic;
+    padding: 10px;
+    border-left: 4px solid black;
+    margin: 10px 0;
+    background: #f4f4f4;
+}
+
+@keyframes blink {
+    0% {
+        text-decoration: underline;
+    }
+    50% {
+        text-decoration: none;
+    }
+    100% {
+        text-decoration: underline;
+    }
+}
+
+/* Apply blinking on hover */
+.post a:hover {
+    background: black;
+    animation: blink 0.6s step-start infinite;
+    color: white;
 }

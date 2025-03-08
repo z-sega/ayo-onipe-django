@@ -1,9 +1,26 @@
-"""Blog views."""
+"""Blog Views."""
 
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import ListView, DetailView
+from django.utils.functional import cached_property
+from django.urls import reverse
+
+from view_breadcrumbs import ListBreadcrumbMixin, DetailBreadcrumbMixin
+
+from .models import Post
 
 
-def index(request):
-    """Blog home view."""
-    return HttpResponse("<h1>Blog Home.</h1>")
+class PostListView(ListBreadcrumbMixin, ListView):
+    """Displays a list of posts."""
+
+    model = Post
+    template_name = "post_list.html"
+    context_object_name = "posts"
+    ordering = "-created"
+
+
+class PostDetailView(DetailBreadcrumbMixin, DetailView):
+    """Displays a single post."""
+
+    model = Post
+    template_name = "post_detail.html"
+    context_object_name = "post"

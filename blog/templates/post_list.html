@@ -1,0 +1,20 @@
+{% extends "_base.html" %}
+
+{% block app_content %}
+  <article>
+    <section>
+      <h3>Index</h3>
+
+      <ul>
+        {% for post in posts %}
+          <li>
+            <a href="{% url 'blog:post_detail' post.pk %}">{{ post.title }}</a>
+            <small>({{ post.created|date:"F j, Y" }})</small>
+          </li>
+          {% empty %}
+          <p>No blog posts available.</p>
+        {% endfor %}
+      </ul>
+    </section>
+  </article>
+{% endblock app_content %}

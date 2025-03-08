@@ -11,6 +11,11 @@ from typing import List, Union, Dict
 from view_breadcrumbs import BaseBreadcrumbMixin
 
 
+def trigger_error(request):
+    """This view forces a 500 error for testing."""
+    raise ValueError("Intentional server error!")
+
+
 class IndexView(BaseBreadcrumbMixin, TemplateView):
     template_name = "index.html"
 

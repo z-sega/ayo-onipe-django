@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% block title %}{{ post.title }}{% endblock title %}
+
+{% block app_content %}
+  <article class="post">
+    <section>
+      <h1>{{ post.title }}</h1>
+      <small>{{ post.created|date:"F j, Y" }}</small>
+      <br><br>
+    </section>
+
+    <section>
+      {{ post.html_content|safe }}
+    </section>
+
+    <section>
+      <p><a href="{% url 'blog:post_list' %}"><-- Back to Index.</a></p>
+    </section>
+  </article>
+{% endblock app_content %}
