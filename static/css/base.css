@@ -76,8 +76,6 @@ body {
     margin: 0em auto 0em;
     max-width: 60rem;
     padding: 1em;
-    border: 0.1rem solid #bfbfbf;
-
     background: var(--background);
     color: var(--text-color);
 }
@@ -147,11 +145,11 @@ button:hover {
 
 .table tbody tr.active,
 .table.table-striped tbody tr.active {
-    background: #e6e6e6;
+    background: var(--table-bg);
 }
 
 .table.table-hover tbody tr:hover {
-    background: #e6e6e6;
+    background: var(--table-bg);
 }
 
 .table.table-scroll {
@@ -173,13 +171,6 @@ button:hover {
 }
 
 /* Article (Blog Post) Styling */
-.post article {
-    padding: 20px;
-    width: 80%;
-    max-width: 800px;
-    text-align: center;
-}
-
 div.sourceCode {
     background-color: var(--code-bg);
     border-left: 4px solid var(--tertiary); /* Subtle left border */
