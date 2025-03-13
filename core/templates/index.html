@@ -22,9 +22,18 @@
     <section>
       <div class="container">
         <h4>
+          <a href="{% url 'artwork:artwork_list' %}">{{ "Art -->" }}</a>
+        </h4>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h4>
           <a href="{% url 'blog:post_list' %}">{{ "Posts -->" }}</a>
         </h4>
       </div>
     </section>
+    
   </article>
 {% endblock app_content %}

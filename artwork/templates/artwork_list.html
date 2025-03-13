@@ -1,0 +1,42 @@
+{% extends "_base.html" %}
+
+{% block app_content %}
+  <div class="container text-center">
+    <table class="table">
+      <caption>Index</caption>
+      <thead>
+        <th>Creation Date</th>
+        <th>Title</th>
+        <th>Preview</th>
+      </thead>
+      <tbody>
+        {% for artwork in artworks %}
+          <tr>
+            <td><small>{{ artwork.creation_date|date:"F j, Y" }}</small></td>
+                
+                <td>
+                  <a href="{% url 'artwork:artwork_detail' artwork.pk %}">
+                    {{ artwork.title }}
+                  </a>
+                </td>
+            <td>
+              {% if artwork.image %}
+                <img src="{{ artwork.image.url }}"
+                     alt="{{ artwork.title }}"
+                     class="img-thumbnail"
+                     style="max-width: 100px; height: auto;"
+                >
+              {% else %}
+                <span class="text-muted">No Image</span>
+              {% endif %}
+            </td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="2">No art yet.</td></tr>  {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div><p><a href="{% url 'index' %}"><-- Back Home</a></p></div>  
+
+{% endblock app_content %}

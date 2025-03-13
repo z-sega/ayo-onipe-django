@@ -1,0 +1,55 @@
+{% extends "_base.html" %}
+
+{% block title %}{{ artwork.title }}{% endblock title %}
+
+{% block app_content %}
+  <article class="artwork">
+    <section>
+      <h1>{{ artwork.title }}</h1>
+      {% if artwork.artist %}
+        <h3>{{ artwork.artist.name }}</h3>
+      {% endif %}
+
+      {% if artwork.creation_date %}
+        <p><small>Created on: {{ artwork.creation_date|date:"F j, Y"}}</small></p>
+      {% endif %}
+    </section>
+
+    <section>
+      {% if artwork.image %}
+        <img src="{{ artwork.image.url }}" alt="{{ artwork.title }}"
+             class="img-fluid img-thumbnail" style="max-width: 100%;">
+      {% else %}
+        <p class="text-muted">No image available</p>
+      {% endif %}
+    </section>
+
+    <section>
+      <h3>Description</h3>
+      <p>{{ artwork.description|default:"No description available." }}</p>
+    </section>
+
+    <section>
+      <h3>Medium</h3>
+      <p>{{ artwork.medium }}</p>
+    </section>
+
+    {% if artwork.height and artwork.width %}
+      <section>
+        <h3>Dimensions</h3>
+        <p>{{ artwork.height }} cm × {{ artwork.width }} cm{% if artwork.depth %} × {{ artwork.depth }} cm{% endif %}</p>
+      </section>
+    {% endif %}
+
+    {% if artwork.is_for_sale %}
+      <section>
+        <h3>Price</h3>
+        <p>${{ artwork.price }} USD</p>
+      </section>
+    {% endif %}
+
+    <section>
+      <p><a href="{% url 'artwork:artwork_list' %}"><-- Back to Index.</a></p>
+    </section>
+  </article>
+{% endblock app_content %}

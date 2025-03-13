@@ -275,6 +275,6 @@ div.sourceCode {
 }
 
 /* Apply blinking on hover */
-.post a:hover {
+a:hover {
     animation: blink 0.6s step-start infinite;
 }
