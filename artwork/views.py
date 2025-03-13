@@ -15,7 +15,7 @@ class ArtworkListView(ListBreadcrumbMixin, ListView):
     model = Artwork
     template_name = "artwork_list.html"
     context_object_name = "artworks"
-    ordering = "title"
+    ordering = "-creation_date"
 
 
 class ArtworkDetailView(DetailBreadcrumbMixin, DetailView):
